@@ -21,12 +21,12 @@ A real-time, geolocation-based weather dashboard built with React and TailwindCS
 | Styling         | TailwindCSS, CSS Modules |
 | Animations      | Framer Motion *(optional)* |
 | Data Fetching   | OpenWeatherMap API      |
-| Deployment      | ...                 |
+| Deployment      | Vercel                 |
 
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/gojer16/....git
+git clone https://github.com/Gojer16/Live-Weather-Dashboard-with-Geolocation
 cd live-weather-dashboard
