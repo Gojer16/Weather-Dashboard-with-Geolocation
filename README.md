@@ -12,6 +12,7 @@ A real-time, geolocation-based weather dashboard built with React and TailwindCS
 - Responsive mobile-first layout ❌
 - Simple, clean UI design ❌
 - Weather data from OpenWeatherMap API (Free Tier)
+- Secure Location for the users, 100 meters of distance
 
 ## 🧱 Tech Stack
 
