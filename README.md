@@ -9,8 +9,8 @@ A real-time, geolocation-based weather dashboard built with React and TailwindCS
   - City & Country
   - Temperature + Weather icon + Condition
   - “Feels like”, Humidity, Wind
-- Responsive mobile-first layout
-- Simple, clean UI design
+- Responsive mobile-first layout ❌
+- Simple, clean UI design ❌
 - Weather data from OpenWeatherMap API (Free Tier)
 
 ## 🧱 Tech Stack
