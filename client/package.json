@@ -13,6 +13,7 @@
     "@hugeicons/react": "^1.0.5",
     "@tailwindcss/vite": "^4.1.7",
     "axios": "^1.9.0",
+    "daisyui": "^5.0.35",
     "gsap": "^3.13.0",
     "motion": "^12.11.4",
     "react": "^19.1.0",
