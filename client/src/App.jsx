@@ -4,9 +4,6 @@ import  useGeolocation  from "./hooks/useGeolocation";
 import  useWeather  from "./hooks/useWeather";
 import { GrMapLocation } from "react-icons/gr";
 
-
-
-
 function App() {
   const [enabled, setEnabled] = useState(false); 
   const { location, error: geoError, loading: geoLoading } = useGeolocation(enabled);
@@ -17,38 +14,59 @@ function App() {
   if (geoError || apiError) return <p>Error: {geoError || apiError}</p>;
 
   return (
-    <>
-    <div className='grid-cols py-8 px-[20%] text-center items-center'>
-      
-        <h1 className='text-2xl text-red-500 font-bold mb-8'>Get the Current Weather Wherever You Are</h1>
-        <h2 className='text-xl text-gray-500 font-semibold mb-8'>Fast. Simple. Accurate.</h2>
-    
-
-        {!enabled && (
-        <button 
-        onClick={() => setEnabled(true)}
-        className="btn bg-gradient-to-r from-purple-600 to-indigo-600 active:scale-95 hover:scale-105 transition-transform duration-300  px-6 py-2  shadow-xl  text-white rounded gap-2 items-center">  <GrMapLocation /> Get My Weather</button>
-        )}
-      
-    </div>
-
-      {isLoading && <p>Loading...</p>}
-      {geoError && <p>Error: {geoError}</p>}
-      {apiError && <p>Error: {apiError}</p>}
-      <div className=' flex justify-center text-center'>  
-      {weather && (
-        <div className="px-8 py-4">
-          <h2>Weather in {weather.city}, {weather.country}</h2>
-          <p>Temperature: {weather.temp}°C</p>
-          <p>Feels Like: {weather.feelsLike}°C</p>
-          <p>Humidity: {weather.humidity}%</p>
-          <p>Wind: {weather.wind} km/h</p>
-          <p>Description: {weather.description}</p>
-        </div>
-        
-      )}
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 relative overflow-hidden">
+      {/* Animated Clouds */}
+      <div className="absolute -top-10 -left-32 z-0 animate-cloud-move-1 pointer-events-none">
+        <svg width="220" height="100" viewBox="0 0 220 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 blur-sm">
+          <ellipse cx="60" cy="60" rx="60" ry="40" fill="#fff"/>
+          <ellipse cx="120" cy="40" rx="50" ry="30" fill="#fff"/>
+          <ellipse cx="180" cy="70" rx="40" ry="25" fill="#fff"/>
+        </svg>
       </div>
-    </>
+      <div className="absolute top-20 right-0 z-0 animate-cloud-move-2 pointer-events-none">
+        <svg width="180" height="80" viewBox="0 0 180 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-40 blur-md">
+          <ellipse cx="50" cy="50" rx="50" ry="25" fill="#fff"/>
+          <ellipse cx="120" cy="30" rx="40" ry="20" fill="#fff"/>
+        </svg>
+      </div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 animate-cloud-move-3 pointer-events-none">
+        <svg width="260" height="90" viewBox="0 0 260 90" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-30 blur-lg">
+          <ellipse cx="80" cy="60" rx="70" ry="30" fill="#fff"/>
+          <ellipse cx="180" cy="40" rx="60" ry="25" fill="#fff"/>
+        </svg>
+      </div>
+      {/* Main Card */}
+      <div className="w-full max-w-xl px-8 py-10 mt-10 bg-white/20 backdrop-blur-md rounded-3xl shadow-2xl flex flex-col items-center border border-white/30 relative z-10">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-4 tracking-tight animate-fade-in">Get the Current Weather Wherever You Are</h1>
+        <h2 className="text-lg md:text-xl text-white/80 font-medium mb-8 animate-fade-in delay-100">Fast. Simple. Accurate.</h2>
+        {!enabled && (
+          <button 
+            onClick={() => setEnabled(true)}
+            className="flex items-center gap-3 px-8 py-3 rounded-full bg-gradient-to-r from-purple-700 to-indigo-700 text-white font-semibold shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 text-lg animate-bounce-in">
+            <GrMapLocation className="text-2xl" /> Get My Weather
+          </button>
+        )}
+        {isLoading && <p className="mt-8 text-white/90 text-lg flex items-center gap-3"><span className="loading loading-spinner text-white"></span>Waiting...</p>}
+        {(geoError || apiError) && <p className="mt-8 text-red-200 bg-red-500/30 px-4 py-2 rounded-lg font-semibold">Error: {geoError || apiError}</p>}
+        {weather && (
+          <div className="mt-10 w-full flex justify-center animate-fade-in-up">
+            <div className="w-full max-w-md bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl px-10 py-8 border border-white/40">
+              <h2 className="text-2xl font-bold text-indigo-700 mb-4 flex flex-col items-center">
+                <span className="text-lg text-gray-500 font-medium mb-1">Weather in</span>
+                {weather.city}, {weather.country}
+              </h2>
+              <div className="grid grid-cols-2 gap-4 text-gray-800 text-lg font-medium">
+                <div>Temperature:</div><div>{weather.temp}°C</div>
+                <div>Feels Like:</div><div>{weather.feelsLike}°C</div>
+                <div>Humidity:</div><div>{weather.humidity}%</div>
+                <div>Wind:</div><div>{weather.wind} km/h</div>
+                <div>Description:</div><div className="capitalize">{weather.description}</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 
