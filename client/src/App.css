@@ -28,3 +28,7 @@ h1 p {
     background: transparent;
     backdrop-filter: blur(10px);
 }
+
+.card {
+    background-color: aliceblue;
+}

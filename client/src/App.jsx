@@ -33,7 +33,7 @@ function App() {
       {apiError && <p>Error: {apiError}</p>}
 
 
-      <div className=' flex justify-center text-center'>  
+      <div className='card flex justify-center text-center'>  
       {weather && (
         <div className="px-8 py-4">
           <h2>Weather in {weather.city}, {weather.country}</h2>
