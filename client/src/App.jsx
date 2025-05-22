@@ -4,6 +4,7 @@ import  useGeolocation  from "./hooks/useGeolocation";
 import  useWeather  from "./hooks/useWeather";
 import { GrMapLocation } from "react-icons/gr";
 import { motion } from "motion/react"
+import Card from './components/Card';
 
 function App() {
   const [enabled, setEnabled] = useState(false); 
@@ -17,7 +18,8 @@ function App() {
   return (
     <>
     <div className=''>
-      <motion.div />
+      <motion.div 
+      />
         <h1 className='text-[2.5rem] text-white font-bold '>Get the Current Weather Wherever You Are.</h1>
         <p className='text-[1.5rem] text-white font-semibold'>Fast. Simple. Accurate.</p>
         <motion.div />
@@ -31,20 +33,11 @@ function App() {
       {isLoading && <p>Loading...</p>}
       {geoError && <p>Error: {geoError}</p>}
       {apiError && <p>Error: {apiError}</p>}
-
-
-      <div className='card flex justify-center text-center'>  
-      {weather && (
-        <div className="px-8 py-4">
-          <h2>Weather in {weather.city}, {weather.country}</h2>
-          <p>Temperature: {weather.temp}°C</p>
-          <p>Feels Like: {weather.feelsLike}°C</p>
-          <p>Humidity: {weather.humidity}%</p>
-          <p>Wind: {weather.wind} km/h</p>
-          <p>Description: {weather.description}</p>
-        </div>
-      )}
-      </div>
+      
+      {weather && 
+      (<Card weather={weather} 
+      />)}
+       
     </>
   )
 }

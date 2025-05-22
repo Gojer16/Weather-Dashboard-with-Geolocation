@@ -16,7 +16,6 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #9a4fcb 25%, #1fd2dc 100%);
     text-align: center;
-
 }
 
 .btn {
@@ -27,8 +26,4 @@ body {
 h1 p {
     background: transparent;
     backdrop-filter: blur(10px);
-}
-
-.card {
-    background-color: aliceblue;
 }
