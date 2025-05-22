@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import  useGeolocation  from "./hooks/useGeolocation";
 import  useWeather  from "./hooks/useWeather";
 import { GrMapLocation } from "react-icons/gr";
-
-
-
+import { motion } from "motion/react"
 
 function App() {
   const [enabled, setEnabled] = useState(false); 
@@ -18,23 +16,23 @@ function App() {
 
   return (
     <>
-    <div className='grid-cols py-8 px-[20%] text-center items-center'>
-      
-        <h1 className='text-2xl text-red-500 font-bold mb-8'>Get the Current Weather Wherever You Are</h1>
-        <h2 className='text-xl text-gray-500 font-semibold mb-8'>Fast. Simple. Accurate.</h2>
-    
-
+    <div className=''>
+      <motion.div />
+        <h1 className='text-[2.5rem] text-white font-bold '>Get the Current Weather Wherever You Are.</h1>
+        <p className='text-[1.5rem] text-white font-semibold'>Fast. Simple. Accurate.</p>
+        <motion.div />
         {!enabled && (
         <button 
         onClick={() => setEnabled(true)}
-        className="btn bg-gradient-to-r from-purple-600 to-indigo-600 active:scale-95 hover:scale-105 transition-transform duration-300  px-6 py-2  shadow-xl  text-white rounded gap-2 items-center">  <GrMapLocation /> Get My Weather</button>
-        )}
-      
+        className="btn bg-gradient-to-r from-purple-600 to-indigo-600 active:scale-95 hover:scale-110 transition-transform duration-300  border-none shadow-md  text-white rounded gap-2 items-center ">  <GrMapLocation /> Get My Weather</button>
+        )} 
     </div>
 
       {isLoading && <p>Loading...</p>}
       {geoError && <p>Error: {geoError}</p>}
       {apiError && <p>Error: {apiError}</p>}
+
+
       <div className=' flex justify-center text-center'>  
       {weather && (
         <div className="px-8 py-4">
@@ -45,7 +43,6 @@ function App() {
           <p>Wind: {weather.wind} km/h</p>
           <p>Description: {weather.description}</p>
         </div>
-        
       )}
       </div>
     </>
