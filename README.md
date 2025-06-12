@@ -1,35 +1,38 @@
-# Live-Weather-Dashboard-with-Geolocation
+# 🌦️ Live Weather Dashboard with Geolocation
 
-A real-time, geolocation-based weather dashboard built with React and TailwindCSS. Displays current weather and essential data for your current location.
+A real-time weather dashboard that auto-detects your location and displays current weather information using the OpenWeatherMap API. Built with React and TailwindCSS for a fast, responsive, and clean user experience.
+
+---
 
 ## 📌 MVP Features
 
-- Auto-fetch user location via Geolocation API
-- Display:
+- 📍 **Auto-detect Location** using the browser's Geolocation API (accuracy up to ~100 meters)
+- 🌤 **Current Weather Info**, including:
   - City & Country
-  - Temperature + Weather icon + Condition
-  - “Feels like”, Humidity, Wind
-- Responsive mobile-first layout ❌
-- Simple, clean UI design ❌
-- Weather data from OpenWeatherMap API (Free Tier)
-- Secure Location for the users, 100 meters of distance
+  - Temperature + Icon + Weather Condition
+  - "Feels Like", Humidity, Wind Speed
+- 📱 **Responsive UI** – Designed mobile-first *(planned for completion)*
+- 🎨 **Clean, minimalist design**
+- ☁️ **Weather data powered by** [OpenWeatherMap](https://openweathermap.org/api)
+
+---
 
 ## 🧱 Tech Stack
 
-| Purpose         | Tech                    |
-|----------------|--------------------------|
-| Frontend        | React.js                |
+| Category        | Technology               |
+|----------------|---------------------------|
+| Frontend        | React.js (Functional + Hooks) |
 | Styling         | TailwindCSS, CSS Modules |
-| Animations      | ... |
-| Data Fetching   | OpenWeatherMap API      |
-| Deployment      | Vercel                 |
+| Animations      | *(Planned: Framer Motion)* |
+| Weather API     | OpenWeatherMap API       |
+| Deployment      | Vercel                   |
+
+---
 
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Gojer16/Live-Weather-Dashboard-with-Geolocation
-cd live-weather-dashboard
-npm install
-npm run dev
+git clone https://github.com/Gojer16/Live-Weather-Dashboard-with-Geolocation.git
+cd Live-Weather-Dashboard-with-Geolocation
