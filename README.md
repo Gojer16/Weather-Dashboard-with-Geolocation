@@ -1,6 +1,6 @@
 # 🌦️ Live Weather Dashboard with Geolocation
 
-A real-time weather dashboard that auto-detects your location and displays current weather information using the OpenWeatherMap API. Built with React and TailwindCSS for a fast, responsive, and clean user experience.
+A real-time weather dashboard that auto-detects your location and displays current weather information using the OpenWeatherMap API. Built with React, TailwindCSS, and Framer Motion for a fast, responsive, and modern animated experience.
 
 ---
 
@@ -11,8 +11,9 @@ A real-time weather dashboard that auto-detects your location and displays curre
   - City & Country
   - Temperature + Icon + Weather Condition
   - "Feels Like", Humidity, Wind Speed
-- 📱 **Responsive UI** – Designed mobile-first *(planned for completion)*
-- 🎨 **Clean, minimalist design**
+- 📱 **Responsive UI** – Mobile-first and fully responsive across breakpoints
+- 🎨 **Modern, minimalist design** with accessible spacing and clear hierarchy
+- ✨ **Smooth micro‑interactions** powered by Framer Motion
 - ☁️ **Weather data powered by** [OpenWeatherMap](https://openweathermap.org/api)
 
 ---
@@ -23,7 +24,7 @@ A real-time weather dashboard that auto-detects your location and displays curre
 |----------------|---------------------------|
 | Frontend        | React.js (Functional + Hooks) |
 | Styling         | TailwindCSS, CSS Modules |
-| Animations      | *(Planned: Framer Motion)* |
+| Animations      | Framer Motion |
 | Weather API     | OpenWeatherMap API       |
 | Deployment      | Vercel                   |
 
